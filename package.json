@@ -1,0 +1,10 @@
+{
+  "name": "arigatai-token",
+  "version": "1.0.0",
+  "description": "The ERC-20 Token for Arigatai",
+  "main": "index.js",
+  "repository": "https://github.com/pmatsinopoulos/arigatai-token",
+  "author": "Panos Matsinopoulos <panagiotis@matsinopoulos.gr>",
+  "license": "MIT",
+  "private": false
+}
