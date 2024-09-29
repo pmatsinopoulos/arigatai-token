@@ -21,6 +21,23 @@ contract Arigatai is ERC20, ERC20Pausable, Ownable {
         _unpause();
     }
 
+    // Make transfer ownership function work only when paused
+    // -------------------------------------------------------
+    function renounceOwnership() public override onlyOwner whenPaused {
+        super.renounceOwnership();
+    }
+
+    function transferOwnership(
+        address newOwner
+    ) public override onlyOwner whenPaused {
+        super.transferOwnership(newOwner);
+    }
+
+    // -------------------------------------------------------
+
+    // INTERNALs
+    // ---------
+
     // The following functions are overrides required by Solidity.
 
     function _update(
@@ -30,4 +47,6 @@ contract Arigatai is ERC20, ERC20Pausable, Ownable {
     ) internal override(ERC20, ERC20Pausable) {
         super._update(from, to, value);
     }
+
+    // ---- end of INTERNALs ------------------------------------
 }
